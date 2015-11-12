@@ -1,7 +1,100 @@
 ####移动开发
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+```
 
 ####appearance
 -moz-appearance 
+
 -webkit-appearance
-https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance
+
+[更多](https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance)
+
+####关于垂直居中
+http://vanseodesign.com/css/vertical-centering/
+
+1
+```css
+#parent {display: table;}
+
+#child {
+    display: table-cell;
+    vertical-align: middle;
+}
+```
+
+2
+```css
+#child {
+    line-height: 200px;
+}
+#parent {
+    line-height: 200px;
+}
+
+#parent img {
+    vertical-align: middle;
+}
+```
+
+3
+```css
+#parent {position: relative;}
+
+#child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    width: 50%;
+    margin: -15% 0 0 -25%;
+}
+```
+4
+```css
+#parent {position: relative;}
+
+#child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+}
+```
+5
+```css
+#parent {
+    padding: 5% 0;
+}
+
+#child {
+    padding: 10% 0;
+}
+```
+
+6
+```html
+<div id="parent">
+    <div id="floater"></div>
+    <div id="child">Content here</div>
+</div>
+```
+```css
+#parent {height: 250px;}
+
+#floater {
+    float: left;
+    height: 50%;
+    width: 100%;
+    margin-bottom: -50px;
+}
+
+#child {
+    clear: both;
+    height: 100px;
+}
+```
