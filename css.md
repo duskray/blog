@@ -3,17 +3,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 ```
 
-####appearance
+####关于Safari appearance属性
 -moz-appearance 
 
 -webkit-appearance
 
 [更多](https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance)
 
-####关于垂直居中
+####关于动画
+```css
+@keyframes rainbow {
+  from，to { transform: none; }
+  50% { transform: scale(1.2); }
+}
+
+div:hover {
+  animation-name: rainbow;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-fill-mode:forwards;
+  animation-direction: normal;
+  animation-iteration-count: 3;
+}
+
+div {
+    animation: spin 1s linear infinite;
+    animation-play-state: paused;
+}
+
+div:hover {
+  animation-play-state: running;
+}
+```
+
+####关于垂直居中的几种方法
 http://vanseodesign.com/css/vertical-centering/
 
-1
+1 
 ```css
 #parent {display: table;}
 
