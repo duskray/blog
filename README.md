@@ -5,6 +5,7 @@
 * [echarts](https://github.com/ecomfe/echarts)
 * [jquery.sparkline](https://github.com/gwatts/jquery.sparkline)  
 * 
+* Dropdown增强[select2](https://github.com/select2/select2)
 * 自动完成 [jQuery-Autocomplete](https://github.com/devbridge/jQuery-Autocomplete)
 * tag组件 [jQuery-Tags-Input](https://github.com/xoxco/jQuery-Tags-Input)
 * 时间段选择器 [bootstrap-daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker)
