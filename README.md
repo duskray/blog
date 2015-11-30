@@ -1,13 +1,14 @@
 * [DataTables](https://github.com/DataTables/DataTables)
-* [DataTables中文](http://dt.thxopen.com/)
+	* [DataTables中文](http://dt.thxopen.com/)
 * [Highcharts](https://github.com/highslide-software/highcharts.com)
-* [Highcharts中文](http://www.hcharts.cn)
+	* [Highcharts中文](http://www.hcharts.cn)
 * [echarts](https://github.com/ecomfe/echarts)
 * [jquery.sparkline](https://github.com/gwatts/jquery.sparkline)  
-* 
+<br><br>
 * Dropdown增强 [select2](https://github.com/select2/select2)
-* 拼音转换 [simple-pinyin](https://github.com/xuqingkuang/simple-pinyin)
-*
+	* 拼音转换 [simple-pinyin](https://github.com/xuqingkuang/simple-pinyin)
+	* [整合参考](https://github.com/duskRay/blog/blob/master/lib.md#about-select2-40)
+<br><br>
 * 自动完成 [jQuery-Autocomplete](https://github.com/devbridge/jQuery-Autocomplete)
 * tag组件 [jQuery-Tags-Input](https://github.com/xoxco/jQuery-Tags-Input)
 * 时间段选择器 [bootstrap-daterangepicker](https://github.com/dangrossman/bootstrap-daterangepicker)
@@ -18,7 +19,7 @@
 * textarea固定高度 [autosize](https://github.com/jackmoore/autosize)
 * 表单验证 [jQuery-Validation-Engine](https://github.com/posabsolute/jQuery-Validation-Engine)
 * 前端模板 [artTemplate](https://github.com/aui/artTemplate)
-* 
+<br><br>
 * 浮动通知 [pnotify](https://github.com/sciactive/pnotify)
 * 浮动通知 [bootstrap-notify](https://github.com/goodybag/bootstrap-notify)
 * 自定义滚动条 [jquery.nicescroll](https://github.com/inuyaksa/jquery.nicescroll)
@@ -33,8 +34,8 @@
 * 上传组件 [webuploader](https://github.com/fex-team/webuploader)
 * 取色器 [bootstrap-colorpicker](https://github.com/mjolnic/bootstrap-colorpicker)
 * 日历 [fullcalendar](https://github.com/fullcalendar/fullcalendar)
-
-_深坑_ ↓
+<br><br>
+深坑 ↓
 * checkbox [switchery](https://github.com/abpetkov/switchery)
 * checkbox [icheck](https://github.com/fronteed/icheck)
 * checkbox [bootstrap-switch](https://github.com/nostalgiaz/bootstrap-switch)
