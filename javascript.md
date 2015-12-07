@@ -7,7 +7,7 @@ if (index > -1) {
 }
 ```
 
-####isEmpty
+####通用isEmpty
 ```js
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -32,4 +32,24 @@ isEmpty("Hello"), // false
 isEmpty([1,2,3]), // false
 isEmpty({test: 1}), // false
 isEmpty({length: 3, custom_property: [1,2,3]}) // false
+```
+
+####支持拼音 select2+simple-pinyin
+```js
+$.fn.select2.defaults.set("matcher", function(param, data) {
+    var term = param.term;
+    if (term) {
+        var mod = simplePinyin(data.text);
+        var termUpperCase = term.toUpperCase();
+        var inFull = mod.full.toUpperCase().indexOf(termUpperCase) === 0;
+        var inShort = mod.short.toUpperCase().indexOf(termUpperCase) >= 0;
+        return (inFull || inShort) ? data : null;
+    } else {
+        return data;
+    }
+});
+
+$(...).select2({
+    language: 'zh-CN'
+});
 ```
