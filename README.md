@@ -7,7 +7,7 @@
 <br><br>
 * Dropdown增强 [select2](https://github.com/select2/select2)
 	* 拼音转换 [simple-pinyin](https://github.com/xuqingkuang/simple-pinyin)
-	* [整合参考](https://github.com/duskRay/blog/blob/master/lib.md#about-select2-40)
+	* [整合参考](https://github.com/duskRay/blog/blob/master/javascript.md#支持拼音-select2simple-pinyin)
 <br><br>
 * 横向切屏 [Swiper](https://github.com/nolimits4web/swiper/)
 * 自动完成 [jQuery-Autocomplete](https://github.com/devbridge/jQuery-Autocomplete)
