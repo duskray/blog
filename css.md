@@ -10,6 +10,23 @@
 
 [更多](https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance)
 
+####关于click穿透
+```css
+ pointer-events: none;
+ pointer-events: auto;
+```
+
+####关于线性渐变
+```css
+background: linear-gradient(90deg, #4F6F96,#6A98BA );
+```
+
+####关于遮挡文字省略号表示
+```css
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+```
 ####关于动画
 ```css
 @keyframes rainbow {
@@ -35,17 +52,6 @@ div {
 div:hover {
   animation-play-state: running;
 }
-```
-####关于线性渐变
-```css
-background: linear-gradient(90deg, #4F6F96,#6A98BA );
-```
-
-####关于遮挡文字省略号表示
-```css
-white-space: nowrap;
-overflow: hidden;
-text-overflow: ellipsis;
 ```
 
 ####关于垂直居中的几种方法
