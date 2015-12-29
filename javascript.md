@@ -18,9 +18,7 @@ function isEmpty(obj) {
     }
     return true;
 }
-```
-Examples:
-```js
+
 isEmpty(""), // true
 isEmpty([]), // true
 isEmpty({}), // true
