@@ -7,7 +7,7 @@ if (index > -1) {
 }
 ```
 
-####通用isEmpty
+####通用的isEmpty
 ```js
 function isEmpty(obj) {
     if (obj === null) return true;
