@@ -54,6 +54,25 @@ div:hover {
 }
 ```
 
+####chrome自动填充背景色去除
+```css
+input:-webkit-autofill,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:visited {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6), inset 0 0 0 50px white;
+}
+```
+
+####打印分页
+```css
+@media print{
+  .print-page{page-break-after:always;}
+}
+```
+
+
 ####关于垂直居中的几种方法
 http://vanseodesign.com/css/vertical-centering/
 
