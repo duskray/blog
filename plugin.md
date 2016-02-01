@@ -55,9 +55,10 @@ node.DataTable({
 });
 ```
 
-####隐藏列
+####隐藏列(by index)
 ```js
 $(...).DataTable().column(0).visible(false);
+$(...).DataTable().columns([2, 3, 4]).visible(true);
 ```
 
 ####排序列
