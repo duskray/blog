@@ -94,3 +94,14 @@ if(!events) {
    //some code
 }
 ```
+
+####Html转义
+```js
+function htmlEncode(s)
+{
+  var el = document.createElement("div");
+  el.innerText = el.textContent = s;
+  s = el.innerHTML;
+  return s;
+}
+```
