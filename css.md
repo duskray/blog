@@ -27,6 +27,13 @@ white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
 ```
+
+####关于文字换行
+```css
+word-wrap:break-word;
+word-break:normal;
+```
+
 ####关于动画
 ```css
 @keyframes rainbow {

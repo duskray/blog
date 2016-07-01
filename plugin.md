@@ -59,6 +59,7 @@ node.DataTable({
 ```js
 $(...).DataTable().column(0).visible(false);
 $(...).DataTable().columns([2, 3, 4]).visible(true);
+$(...).DataTable().columns([string - jQuery selector]).visible(true);
 ```
 
 ####排序列
