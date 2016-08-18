@@ -42,6 +42,32 @@ Number.prototype.commafy = function () {
 }
 ```
 
+####导出时千分符过滤
+```js
+node.DataTable({
+    "columnDefs": columnDefs,
+    "scrollX": true,
+    "dom": 'Bfrtip',
+    "buttons": [
+        {
+            extend: 'excelHtml5',
+            exportOptions: {
+                columns: ':visible',
+                format: {
+                    body: function(data, columnIdx) {
+                        if (isNaN(Number(data.replace(/,/g, '')))) {
+                            return data;
+                        } else {
+                            return data.replace(/,/g, '');
+                        }
+                    }
+                }
+            },
+        }
+    ]
+});
+```
+
 ####列渲染
 ```js
 node.DataTable({
@@ -78,17 +104,21 @@ grid.page.len(30).draw();
 ####给自己的参考
 *之前与artTemplate使用的初始化, 感觉有哪里不对...*
 ```js
-function(nodeid, data, fixedColumns, otherDefs) {
-    var node = $('#' + nodeid);
+/**
+ * js模板简化表单
+ * @param  {string} selector       table节点
+ * @param  {string} templateSource 模板字符串
+ * @param  {object} data           数据
+ * @return {null}                
+ */
+sampleGrid: function(selector, templateSource, data) {
+    var node = $(selector);
     node.DataTable().destroy();
-    var fixedOption = fixedColumns ? {
-        leftColumns: fixedColumns
-    } : false;
     var columnDefs = [{
         type: "num-fmt",
         targets: 'thousands',
         render: function(data) {
-            return data ? data.commafy() : data;
+            return $.isNumeric(data) ? data.commafy() : data;
         }
     }, {
         type: 'num-fmt',
@@ -97,36 +127,42 @@ function(nodeid, data, fixedColumns, otherDefs) {
             return data + '%';
         }
     }];
-    if (otherDefs) {
-        columnDefs.push(otherDefs);
+    var html = '';
+    if (templateSource.indexOf('#') == 0) {
+        html = template(templateId, data);
+    } else {
+        html = template.compile(templateSource)(data);
     }
-    dataFormat(data);
-    $('div.content').find('center.error-msg').remove();
-    var html = template(nodeid + '-template', data);
+    
     if (html == 'error') {
-        node.css("display", "none");
-        var errmsg = $('<center class="error-msg"><div style="width:100%;height:100%;background-color:#ff9600;color:#ffffff">服务器返回了错误的结果，这可能需要管理员的帮助。</div></center>');
-        node.closest('div.content').append(errmsg);
+        showMessage('数据模板渲染错误');
         return null;
     }
     node.find('tbody').html(html);
     node.css("display", "table");
-    var api = node.DataTable({
+    return node.DataTable({
         "columnDefs": columnDefs,
         "scrollX": true,
-        "fixedColumns": fixedOption,
         "dom": 'Bfrtip',
         "buttons": [
-            //     'copyHtml5',
-            //     'csvHtml5',
-            //     'pdfHtml5',
-            //     'excelFlash'
-            'excelHtml5'
+            {
+                extend: 'excelHtml5',
+                exportOptions: {
+                    columns: ':visible',
+                    format: {
+                        body: function(data, columnIdx) {
+                            if (isNaN(Number(data.replace(/,/g, '')))) {
+                                return data;
+                            } else {
+                                return data.replace(/,/g, '');
+                            }
+                        }
+                    }
+                },
+            }
         ]
     });
-
-    return api;
-}
+},
 ```
 
 ###About select2 4.0
@@ -145,4 +181,9 @@ $.fn.select2.defaults.set("matcher", function(param, data) {
         return data;
     }
 });
+```
+
+####赋值
+```js
+$('#sltGroup').val('1').change()
 ```

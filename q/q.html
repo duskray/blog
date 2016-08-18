@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="q.js"></script>
+	<script>
+		//模拟延迟操作
+		var func = function(val){
+		    var d = Q.defer();
+		    setTimeout(function(){
+		        var result = val * val;
+		        if (val != 0) {
+		        	d.resolve(result);
+		        	// d.resolve({result:result});
+		        } else {
+
+	        		d.reject('err');
+		        }
+		    }, 500);
+		    return d.promise;
+		};
+
+		var arr = [1, 2, 3, 4, 5];
+		var funcs = [func, func, func];
+		var result = Q(2)
+
+		function test() {
+			console.log('=============================')
+			//all 当其中一个操作rejected时立即返回 终止其余操作
+			Q.all([func(1), func(2)]).then(function(v) {
+					console.log('all');
+					console.debug(v);
+					console.log('=============================');
+			}).done();
+
+			//allSettled 会等待所有操作执行完毕 即使其中包含rejected
+			Q.allSettled([func(0), func(0)])
+			.spread(function(v, r) {
+					console.log('allSettled');
+					console.debug(v);console.debug(r)
+					console.log('=============================');
+			}).done();
+
+			//any
+			Q.any([func(1), func(2)]).then(function(v) {
+					console.log('any');
+					console.debug(v);
+					console.log('=============================');
+			}).done();
+
+
+			//spread展开
+			func(1).then(function(r) { 
+				return [func(1), func(3)];
+			}).spread(function(v, r) {
+					console.log('spread展开');
+					console.debug(v);console.debug(r);
+					console.log('=============================');
+			}).done();
+
+
+			//紧凑(compact)顺序操作
+			var result = funcs.reduce(function(result, f) {
+				return result.then(f);
+			}, Q(2));
+
+			setTimeout(function(){
+					console.log('紧凑(compact)顺序操作');
+					console.debug(result.inspect());
+					console.log('=============================');
+			}, 2000);
+			
+
+			//超紧凑(ultra-compact)顺序操作
+			var result = funcs.reduce(Q.when, Q(2));
+
+			setTimeout(function(){
+					console.log('超紧凑(ultra-compact)顺序操作');
+					console.debug(result.inspect());
+					console.log('=============================');
+			}, 2000);
+			
+			//Q.delay
+			Q.delay(3, 3000).then(function(v) {
+					console.log('Q.delay');
+					console.debug(v);
+					console.log('=============================');
+			}).done();
+
+			//Q.timeout
+			Q.timeout(func(4), 200).then(function(v) {
+					console.log('Q.timeout fulfilled');
+					console.debug(v);
+					console.log('=============================');
+			}, function(v) {
+					console.log('Q.timeout timeout');
+					console.debug(v);
+					console.log('=============================');
+			}).done();
+		}
+		test();
+		// Q("Hello, World!").delay(100).tap(console.log).done();
+		
+
+	</script>
+</head>
+<body>
+	<progress value="50" max="100">70 %</progress>
+</body>
+</html>
