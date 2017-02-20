@@ -79,6 +79,39 @@ input:-webkit-autofill:visited {
   .print-page{page-break-after:always;}
 }
 ```
+####padding填充
+```css
+.poplogin {
+    background-color: #CAB077;
+    padding-top: 5px;
+    display: none;
+    width: 560px;
+    position: fixed;
+    left: 0;
+    top: 10%;
+    right: 0;
+    margin: 0 auto;
+    z-index: 100000;
+    border-radius: 4px;
+    animation: dropbox .5s normal linear;
+    opacity: 0;
+    transition: .5s opacity;
+    font-family: Microsoft YaHei;
+}
+.poplogin:after {
+    background-color: #FFF;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+```
 
 
 ####关于垂直居中的几种方法
