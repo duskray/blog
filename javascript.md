@@ -105,3 +105,9 @@ function htmlEncode(s)
   return s;
 }
 ```
+
+```js
+(function($,window,undefined){
+
+})(jQuery,window);
+```
