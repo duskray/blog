@@ -1,41 +1,63 @@
-####移动开发
+#### 关于换行
+```css
+//强制不换行
+white-space: nowrap;
+//自动换行
+word-wrap: break-word; 
+word-break: normal; 
+//英文单词断行
+word-break: break-all;
+```
+
+#### inline-block 对齐
+```css
+display: inline-block;
+vertical-align: top;
+```
+
+#### 控制元素在移动设备上是否使用滚动回弹效果
+```css
+-webkit-overflow-scrolling: auto/touch
+```
+
+#### 移动开发
 ```html
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 ```
 
-####关于Safari appearance属性
+#### 关于Safari appearance属性
 -moz-appearance 
 
 -webkit-appearance
 
 [更多](https://developer.mozilla.org/en-US/docs/Web/CSS/-moz-appearance)
 
-####关于click穿透
+#### 关于click穿透
 ```css
  pointer-events: none;
  pointer-events: auto;
 ```
 
-####关于线性渐变
+#### 关于线性渐变
 ```css
 background: linear-gradient(90deg, #4F6F96,#6A98BA );
 ```
 
-####关于遮挡文字省略号表示
+#### 关于遮挡文字省略号表示
 ```css
 white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
 ```
 
-####关于文字换行
+#### 关于文字换行
 ```css
 word-wrap:break-word;
 word-break:normal;
 ```
 
-####关于动画
+#### 关于动画
 ```css
 @keyframes rainbow {
   from，to { transform: none; }
@@ -62,7 +84,7 @@ div:hover {
 }
 ```
 
-####chrome自动填充背景色去除
+#### chrome自动填充背景色去除
 ```css
 input:-webkit-autofill,
 input:-webkit-autofill:active,
@@ -73,13 +95,13 @@ input:-webkit-autofill:visited {
 }
 ```
 
-####打印分页
+#### 打印分页
 ```css
 @media print{
   .print-page{page-break-after:always;}
 }
 ```
-####padding填充
+#### padding填充
 ```css
 .poplogin {
     background-color: #CAB077;
@@ -114,7 +136,7 @@ input:-webkit-autofill:visited {
 ```
 
 
-####关于垂直居中的几种方法
+#### 关于垂直居中的几种方法
 http://vanseodesign.com/css/vertical-centering/
 
 1 
