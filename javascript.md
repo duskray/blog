@@ -1,4 +1,8 @@
-####数组删除元素
+#### 使用 passive 改善的滚屏性能
+var elem = document.getElementById('elem'); 
+elem.addEventListener('touchmove', function listener() { /* do something */ }, { passive: true });
+
+#### 数组删除元素
 ```js
 var array = [2, 5, 9];
 var index = array.indexOf(5);
