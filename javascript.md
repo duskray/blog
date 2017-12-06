@@ -11,7 +11,7 @@ if (index > -1) {
 }
 ```
 
-####通用的isEmpty
+#### 通用的isEmpty
 ```js
 function isEmpty(obj) {
     if (obj === null) return true;
@@ -34,7 +34,7 @@ isEmpty({test: 1}), // false
 isEmpty({length: 3, custom_property: [1,2,3]}) // false
 ```
 
-####支持拼音 select2+simple-pinyin
+#### 支持拼音 select2+simple-pinyin
 ```js
 $.fn.select2.defaults.set("matcher", function(param, data) {
     var term = param.term;
@@ -54,7 +54,7 @@ $(...).select2({
 });
 ```
 
-####设备判断
+#### 设备判断
 ```js
 function browserRedirect() {
     var sUserAgent = navigator.userAgent.toLowerCase();
@@ -74,7 +74,7 @@ function browserRedirect() {
 }
 ```
 
-####Date对象相关
+#### Date对象相关
 ```
 new Date(2000, 0, 1, 0, 0, 0)
 getTime():  946656000000
@@ -90,7 +90,7 @@ Date.UTC(2000, 0, 1, 0, 0, 0):  946688461000
 ```
 \* toLocaleString()的[更多信息](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
 
-####事件存在检测
+#### 事件存在检测
 ```js
 var btnExport = $('#id');
 var events = $._data(btnExport[0],"events");
@@ -99,13 +99,8 @@ if(!events) {
 }
 ```
 
-####Html转义
+#### Html转义
 ```js
-"use strict";
-
-// Implementation originally from Twitter's Hogan.js:
-// https://github.com/twitter/hogan.js/blob/master/lib/template.js#L325-L335
-
 var rAmp = /&/g;
 var rLt = /</g;
 var rApos =/\'/g;
