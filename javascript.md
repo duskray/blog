@@ -101,12 +101,6 @@ if(!events) {
 
 #### Html转义
 ```js
-var rAmp = /&/g;
-var rLt = /</g;
-var rApos =/\'/g;
-var rQuot = /\"/g;
-var hChars =/[&<>\"\']/;
-
 module.exports = function(str) {
   if (str == null) {
     return str;
@@ -116,12 +110,13 @@ module.exports = function(str) {
     str = String(str);
   }
 
-  if (hChars.test(String(str))) {
+  if (/[&<>\"\']/.test(String(str))) {
     return str
-      .replace(rAmp,'&amp;')
-      .replace(rLt,'&lt;')
-      .replace(rApos,'&apos;')
-      .replace(rQuot, '&quot;');
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/\'/g,'&apos;')
+      .replace(/\"/g, '&quot;');
   }
   else {
     return str;
