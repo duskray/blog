@@ -1,20 +1,27 @@
 #### 关于换行
 ```css
-//强制不换行
+// 强制不换行
 white-space: nowrap;
-//自动换行
+// 自动换行
 word-wrap: break-word; 
 word-break: normal; 
-//英文单词断行
+// 英文单词断行
 word-break: break-all;
 
-//保留空白符序列与换行符
+// 保留空白符序列与换行符
 white-space: pre-wrap;
 
-//省略号处理
+// 省略号处理
 white-space: nowrap;
 text-overflow: ellipsis;
 overflow: hidden;
+
+// 固定行数
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
 ```
 
 #### inline-block 对齐
