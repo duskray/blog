@@ -7,6 +7,14 @@ word-wrap: break-word;
 word-break: normal; 
 //英文单词断行
 word-break: break-all;
+
+//保留空白符序列与换行符
+white-space: pre-wrap;
+
+//省略号处理
+white-space: nowrap;
+text-overflow: ellipsis;
+overflow: hidden;
 ```
 
 #### inline-block 对齐
