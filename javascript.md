@@ -1,6 +1,16 @@
+#### 人力触发一个下载（？
+```
+const iframe = document.createElement('iframe')
+iframe.src = d
+iframe.style.display = 'none'
+document.body.appendChild(iframe)
+```
+
 #### 使用 passive 改善的滚屏性能
+```js
 var elem = document.getElementById('elem'); 
 elem.addEventListener('touchmove', function listener() { /* do something */ }, { passive: true });
+```
 
 #### 数组删除元素
 ```js
