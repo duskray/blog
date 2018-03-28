@@ -1,5 +1,5 @@
 #### 关于display破坏transition
-```css
+```js
 $('.notice').css({ display: 'block'})
 $('.notice').css('display')  // <=
 $('.notice').css({
