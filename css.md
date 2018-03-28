@@ -1,3 +1,14 @@
+#### 关于display破坏transition
+```css
+$('.notice').css({ display: 'block'})
+$('.notice').css('display')  // <=
+$('.notice').css({
+  top: 'calc(50vh - 60px)',
+  opacity: 1,
+})
+```
+
+
 #### 关于换行
 ```css
 // 强制不换行
