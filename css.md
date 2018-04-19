@@ -1,3 +1,9 @@
+#### 关于ios字体渲染
+```csscss
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+```
+
 #### 关于display破坏transition
 ```js
 $('.notice').css({ display: 'block'})
