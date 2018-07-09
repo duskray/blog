@@ -62,5 +62,20 @@ export const getScrollbarWidth = () => {
 
     return widthNoScroll - widthWithScroll;
 }
+
+// 获取页面高度
+function getBodyHeight() {
+  var body = document.body,
+    html = document.documentElement;
+
+  return Math.max(body.scrollHeight, body.offsetHeight,
+    html.clientHeight, html.scrollHeight, html.offsetHeight);
+}
+
+// 获取滚动条top
+function getScrollTop() {
+  return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+}
+
 ```
 
