@@ -49,6 +49,7 @@ a {
   vertical-align:baseline;
   background:transparent;
   text-decoration:none;
+  color: #000000;
 }
 
 a:link,a:visited,a:focus,a:hover {
