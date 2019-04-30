@@ -1,3 +1,10 @@
+#### isEmptyObj
+```
+const isEmptyObj = (obj) => {
+  return Object.entries(obj).length === 0 && obj.constructor === Object
+}
+```
+
 #### 人力触发一个下载（？
 ```
 const iframe = document.createElement('iframe')
