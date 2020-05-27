@@ -101,7 +101,7 @@ if(grid) {
 grid.page.len(30).draw();
 ```
 
-####给自己的参考
+####参考
 *之前与artTemplate使用的初始化, 感觉有哪里不对...*
 ```js
 /**

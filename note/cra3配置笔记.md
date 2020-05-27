@@ -4,7 +4,7 @@
 TypeError: fsevents is not a constructor
 ```
 
-一脸懵逼
+一脸懵逼  
 重装依赖发现了错误信息
 
 ```
