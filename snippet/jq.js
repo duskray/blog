@@ -1,5 +1,10 @@
+/* 事件存在检测 */
+var btnExport = $('#id');
+var events = $._data(btnExport[0],"events");
+if(!events) {
+   //some code
+}
 
-```js
 // back to top
 function toTop() {
   if ($.browser.safari) {
@@ -76,6 +81,3 @@ function getBodyHeight() {
 function getScrollTop() {
   return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
 }
-
-```
-

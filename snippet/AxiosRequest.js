@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { Toast } from 'antd-mobile'
 // import qs from 'qs'
 
 const ax = {
@@ -63,7 +62,7 @@ const ax = {
           console.log(e.request);
           Toast.offline('网络连接失败', 2, null, false)
         } else {
-          console.log('Error', e.message);
+          console.error(e.message);
         }
       })
     })

@@ -1,4 +1,4 @@
-###About DataTables
+### About DataTables
 ------------
 ####default options
 ```js
@@ -163,27 +163,4 @@ sampleGrid: function(selector, templateSource, data) {
         ]
     });
 },
-```
-
-###About select2 4.0
-------------
-####支持拼音搜索
-```js
-$.fn.select2.defaults.set("matcher", function(param, data) {
-    var term = param.term;
-    if (term) {
-        var mod = simplePinyin(data.text);
-        var termUpperCase = term.toUpperCase();
-        var inFull = mod.full.toUpperCase().indexOf(termUpperCase) === 0;
-        var inShort = mod.short.toUpperCase().indexOf(termUpperCase) >= 0;
-        return (inFull || inShort) ? data : null;
-    } else {
-        return data;
-    }
-});
-```
-
-####赋值
-```js
-$('#sltGroup').val('1').change()
 ```
