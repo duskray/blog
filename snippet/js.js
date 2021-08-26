@@ -1,3 +1,12 @@
+export const to = async (promise: Promise<any>) => {
+    try {
+        return [null, await promise];
+    } catch (err) {
+        return [err];
+    }
+};
+
+
 /** 使用 passive 改善的滚屏性能 */
 var elem = document.getElementById('elem');
 elem.addEventListener('touchmove', function listener() { /* do something */ }, { passive: true });
